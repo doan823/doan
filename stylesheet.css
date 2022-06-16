@@ -1,0 +1,47 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: linear-gradient(to right, #a18cd1 0%, #fbc2eb 100%);
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 90vh;
+    width: 94%;
+    border: solid 12px snow;
+}
+
+.main {
+    position: relative;
+    font-size: 100px;
+    font-family: 'Anton', sans-serif;
+    text-align: center;
+    color: snow;
+    cursor: pointer;
+}
+
+.main::after {
+    position: absolute; /*親要素であるmainタグを基準に位置を指定*/
+    left: 0;            /*アンダーラインを各メニュー（mainタグ）の左端に指定*/
+    content: '';        /*本来は、擬似要素に入るテキストなどを’’内に指定。今回はアンダーラインなので何も記載しない*/
+    width: 100%;        /*アンダーラインを各aタグの幅に合わせる*/
+    height: 10px;        /*アンダーラインの高さ（太さ）*/
+    background: snow;        /*アンダーラインの色*/
+    bottom: 2px;
+    transform: scale(0, 1);     /*アンダーラインの縮尺比率。ホバー前はx方向に0*/
+    transform-origin: left top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の左端*/
+    transition: transform 0.3s; /*変形の時間*/
+}
+
+.main:hover::after {
+    transform: scale(1, 1);     /*ホバー後、x軸方向に1（相対値）伸長*/
+}
