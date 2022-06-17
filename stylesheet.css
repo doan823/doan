@@ -45,3 +45,38 @@ main {
 .main:hover::after {
     transform: scale(1, 1);     /*ホバー後、x軸方向に1（相対値）伸長*/
 }
+
+/* javascript */
+.change {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    min-height: 100vh;
+    /* border: solid 1px red; */
+    background-color: rosybrown;
+    /* opacity: 0.6; */
+    position: fixed;
+    transform: translateY(105%);
+    transition: .5s;
+    transition-delay: 1.6s;
+    background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+    font-family: 'Anton', sans-serif;
+    color: snow;
+}
+
+.active {
+    /* Y方向に要素を移動させる */
+    transform: translateY(-1.1%);
+}
+
+.doumo {
+    position: relative;
+    font-size: 100px;
+}
+
+.animate__animated.animate__flipOutX {
+    --animate-duration: 2s;
+}
